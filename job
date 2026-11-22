@@ -5,7 +5,8 @@ D=`date -R`
 while :
 do
 	python3 ./cli-fetch
+	python3 ./cli-fetch-lab
 	git commit -a -m "$D"
 	git push -u origin main
-	sleep 120
+	sleep 180
 done
