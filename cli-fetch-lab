@@ -404,7 +404,7 @@ def consultar_sistemas(url, usuario, senha):
             if nome_enum(monitor.get("type", "")) == "GROUP":
                 continue
 
-            if not "Labs" in monitor["path"] or not "Home" in monitor["path"]:
+            if not (set(["Labs", "Home"]) & set(monitor["path"])):
                 continue
 
             if not monitor.get("active", False):
