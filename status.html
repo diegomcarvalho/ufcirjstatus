@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Situação dos sistemas de informação da Universidade Federal de Ciência e Inovação do Rio de Janeiro.">
+    <meta name="color-scheme" content="light">
+    <title>Status dos sistemas | Universidade Federal de Ciência e Inovação do Rio de Janeiro</title>
+    <style>
+:root {
+    color-scheme: light;
+    --fundo: #f3f6fb;
+    --texto: #172b43;
+    --secundario: #5b6b7d;
+    --borda: #e1e8f0;
+    --azul: #113b67;
+    --azul-escuro: #092746;
+    --verde: #08734e;
+    --verde-fundo: #eaf7f0;
+    --vermelho: #b32c3d;
+    --vermelho-fundo: #fff0f2;
+    --amarelo: #865900;
+    --amarelo-fundo: #fff7e4;
+    --roxo: #6543a5;
+    --roxo-fundo: #f2edfc;
+    --cinza: #536478;
+    --cinza-fundo: #edf1f6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+                 "Segoe UI", sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: min(1120px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.cabecalho {
+    color: white;
+    background: linear-gradient(120deg, var(--azul-escuro), var(--azul));
+    border-top: 5px solid #d3b36b;
+    padding: 32px 0 70px;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.monograma {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
+    border: 1px solid #ffffff55;
+    border-radius: 16px;
+    background: #ffffff0d;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.marca strong {
+    display: block;
+    font-size: 16px;
+    letter-spacing: .06em;
+}
+
+.marca span {
+    color: #d8e5f4;
+    font-size: 14px;
+}
+
+.introducao { margin-top: 36px; }
+
+.sobretitulo {
+    margin: 0 0 8px;
+    color: #d8e5f4;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(28px, 4vw, 42px);
+    line-height: 1.2;
+    letter-spacing: -.035em;
+}
+
+.introducao > p:last-child {
+    max-width: 650px;
+    margin: 14px 0 0;
+    color: #d8e5f4;
+}
+
+main { padding-bottom: 52px; }
+
+.resumo {
+    position: relative;
+    margin-top: -32px;
+    padding: 26px;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    background: white;
+    box-shadow: 0 12px 35px #142c4910;
+}
+
+.resumo-linha {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.resumo-icone {
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    color: var(--tom);
+    background: var(--suave);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.resumo h2 {
+    margin: 0;
+    font-size: clamp(19px, 2.5vw, 24px);
+    line-height: 1.3;
+}
+
+.resumo p {
+    margin: 6px 0 0;
+    color: var(--secundario);
+    font-size: 14px;
+}
+
+.atualizacao {
+    margin-top: 21px;
+    padding-top: 16px;
+    border-top: 1px solid var(--borda);
+    color: var(--secundario);
+    font-size: 13px;
+}
+
+.indicadores {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 24px;
+}
+
+.indicador {
+    padding: 18px 20px;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    background: white;
+}
+
+.indicador strong {
+    display: block;
+    color: var(--tom);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.indicador span {
+    display: block;
+    margin-top: 6px;
+    color: var(--secundario);
+    font-size: 13px;
+}
+
+.secao-cabecalho {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 36px 0 16px;
+}
+
+.secao-cabecalho h2 {
+    margin: 0;
+    font-size: 21px;
+    letter-spacing: -.02em;
+}
+
+.secao-cabecalho p {
+    margin: 0;
+    color: var(--secundario);
+    font-size: 14px;
+}
+
+.sistemas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.sistema {
+    min-width: 0;
+    padding: 23px;
+    border: 1px solid var(--borda);
+    border-top: 4px solid var(--tom);
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 3px 12px #142c4904;
+}
+
+.sistema h3 {
+    margin: 18px 0 8px;
+    font-size: 18px;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.sistema p {
+    margin: 0;
+    color: var(--secundario);
+    font-size: 14px;
+}
+
+.selo {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    color: var(--tom);
+    background: var(--suave);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.selo-icone { font-size: 15px; line-height: 1; }
+
+.operacional {
+    --tom: var(--verde);
+    --suave: var(--verde-fundo);
+}
+.indisponivel {
+    --tom: var(--vermelho);
+    --suave: var(--vermelho-fundo);
+}
+.verificacao {
+    --tom: var(--amarelo);
+    --suave: var(--amarelo-fundo);
+}
+.manutencao {
+    --tom: var(--roxo);
+    --suave: var(--roxo-fundo);
+}
+.desconhecido {
+    --tom: var(--cinza);
+    --suave: var(--cinza-fundo);
+}
+
+.vazio {
+    grid-column: 1 / -1;
+    padding: 40px 24px;
+    border: 1px dashed #c5d1df;
+    border-radius: 14px;
+    color: var(--secundario);
+    background: #ffffff80;
+    text-align: center;
+}
+
+.nota {
+    margin: 24px 0 0;
+    padding: 16px 18px;
+    border-left: 3px solid #b5c6da;
+    border-radius: 0 8px 8px 0;
+    color: var(--secundario);
+    background: #eaf0f7;
+    font-size: 13px;
+}
+
+footer {
+    padding: 24px 0;
+    border-top: 1px solid var(--borda);
+    color: var(--secundario);
+    background: white;
+    font-size: 13px;
+}
+
+.rodape {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+}
+
+@media (max-width: 900px) {
+    .sistemas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .indicadores { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+    .container { width: calc(100% - 32px); }
+    .cabecalho { padding-top: 24px; }
+    .introducao { margin-top: 28px; }
+    .resumo { padding: 20px; }
+    .resumo-linha { align-items: flex-start; gap: 12px; }
+    .resumo-icone { width: 42px; height: 42px; font-size: 23px; }
+    .indicadores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .indicador { padding: 16px; }
+    .sistemas { grid-template-columns: 1fr; }
+}
+
+@media print {
+    body { background: white; }
+    .cabecalho {
+        color: var(--texto);
+        background: white;
+        padding-bottom: 32px;
+    }
+    .marca span, .sobretitulo, .introducao > p:last-child {
+        color: var(--secundario);
+    }
+    .resumo { margin-top: 0; box-shadow: none; }
+    .sistema, .resumo, .indicador { break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <div class="marca" aria-label="Universidade Federal de Ciência e Inovação do Rio de Janeiro">
+                <div class="monograma" aria-hidden="true">
+                    <img src="https://cefet-rj.br/attachments/article/431/UFCIRJbranco.png" alt="UFCIRJ" width="48" height="48">
+                </div>
+                <div>
+                    <strong>Universidade Federal de Ciência e Inovação do Rio de Janeiro</strong>
+                    <span>Departamento de Tecnologia da Informação</span><br>
+                    <span>Diretoria de Gestão Estratégica</span>
+                </div>
+            </div>
+
+            <div class="introducao">
+                <p class="sobretitulo">Transparência e disponibilidade</p>
+                <h1>Status dos sistemas (Visão Externa)</h1>
+                <p>
+                    Consulte a situação dos sistemas de informação
+                    e serviços digitais da universidade.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="resumo indisponivel"
+                 aria-labelledby="titulo-resumo">
+            <div class="resumo-linha">
+                <div class="resumo-icone" aria-hidden="true">
+                    ×
+                </div>
+                <div>
+                    <h2 id="titulo-resumo">Há sistemas indisponíveis</h2>
+                    <p>Consulte os cartões abaixo para identificar os serviços afetados.</p>
+                </div>
+            </div>
+
+            <div class="atualizacao">
+                Consulta concluída em
+                <time datetime="2026-11-22T12:10:51.809262-03:00">22/11/2026 às 12:10:51</time>
+                · Horário de Brasília
+            </div>
+        </section>
+
+        <section class="indicadores" aria-label="Resumo por situação">
+            
+        <div class="indicador operacional">
+            <strong>12</strong>
+            <span>Operacional</span>
+        </div>
+        
+        <div class="indicador indisponivel">
+            <strong>1</strong>
+            <span>Indisponível</span>
+        </div>
+        
+        <div class="indicador verificacao">
+            <strong>0</strong>
+            <span>Em verificação</span>
+        </div>
+        
+        <div class="indicador manutencao">
+            <strong>0</strong>
+            <span>Em manutenção</span>
+        </div>
+        
+        <div class="indicador desconhecido">
+            <strong>0</strong>
+            <span>Sem informação</span>
+        </div>
+        
+        </section>
+
+        <section aria-labelledby="titulo-sistemas">
+            <div class="secao-cabecalho">
+                <h2 id="titulo-sistemas">Sistemas monitorados</h2>
+                <p>Total de sistemas: 13</p>
+            </div>
+
+            <div class="sistemas">
+                
+        <article class="sistema indisponivel">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ×
+                </span>
+                Indisponível
+            </span>
+            <h3>Biblioteca (WEB)</h3>
+            <p>O monitoramento identificou indisponibilidade.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>CADD</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>Cefet DNS Record</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>Cefet Main Site</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>Eleiçoes</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>Portal do Aluno</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>Portal do Professor</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>RedeComep - UFRJ</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>RedeComep-CEFET</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>Registro</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>SGC</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>sippag,cefet-rj.br</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>SUAP</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+            </div>
+        </section>
+
+        <p class="nota">
+            Esta página apresenta um retrato da consulta indicada acima.
+            Os estados não são atualizados em tempo real.
+            Sistemas que exigem atenção aparecem primeiro.
+        </p>
+    </main>
+
+    <footer>
+        <div class="container rodape">
+            <span>© 2026 Universidade Federal de Ciência e Inovação do Rio de Janeiro
+                · Departamento de Tecnologia da Informação</span>
+            <span>Informações de monitoramento: Uptime Kuma</span>
+        </div>
+    </footer>
+</body>
+</html>
