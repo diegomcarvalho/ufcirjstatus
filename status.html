@@ -365,21 +365,21 @@ footer {
     </header>
 
     <main class="container">
-        <section class="resumo operacional"
+        <section class="resumo verificacao"
                  aria-labelledby="titulo-resumo">
             <div class="resumo-linha">
                 <div class="resumo-icone" aria-hidden="true">
-                    ✓
+                    …
                 </div>
                 <div>
-                    <h2 id="titulo-resumo">Todos os sistemas monitorados estão operacionais</h2>
-                    <p>Nenhuma indisponibilidade foi identificada nesta consulta.</p>
+                    <h2 id="titulo-resumo">Há sistemas com estado a confirmar</h2>
+                    <p>Alguns serviços estão em verificação ou sem informação disponível.</p>
                 </div>
             </div>
 
             <div class="atualizacao">
                 Consulta concluída em
-                <time datetime="2026-11-25T06:52:03.102609-03:00">25/11/2026 às 06:52:03</time>
+                <time datetime="2026-11-25T06:55:19.579122-03:00">25/11/2026 às 06:55:19</time>
                 · Horário de Brasília
             </div>
         </section>
@@ -387,7 +387,7 @@ footer {
         <section class="indicadores" aria-label="Resumo por situação">
             
         <div class="indicador operacional">
-            <strong>13</strong>
+            <strong>12</strong>
             <span>Operacional</span>
         </div>
         
@@ -407,7 +407,7 @@ footer {
         </div>
         
         <div class="indicador desconhecido">
-            <strong>0</strong>
+            <strong>1</strong>
             <span>Sem informação</span>
         </div>
         
@@ -421,6 +421,17 @@ footer {
 
             <div class="sistemas">
                 
+        <article class="sistema desconhecido">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ?
+                </span>
+                Sem informação
+            </span>
+            <h3>Cefet Main Site</h3>
+            <p>Não foi possível obter o estado deste sistema.</p>
+        </article>
+        
         <article class="sistema operacional">
             <span class="selo">
                 <span class="selo-icone" aria-hidden="true">
@@ -451,17 +462,6 @@ footer {
                 Operacional
             </span>
             <h3>Cefet DNS Record</h3>
-            <p>Sistema respondendo normalmente.</p>
-        </article>
-        
-        <article class="sistema operacional">
-            <span class="selo">
-                <span class="selo-icone" aria-hidden="true">
-                    ✓
-                </span>
-                Operacional
-            </span>
-            <h3>Cefet Main Site</h3>
             <p>Sistema respondendo normalmente.</p>
         </article>
         
