@@ -365,21 +365,21 @@ footer {
     </header>
 
     <main class="container">
-        <section class="resumo verificacao"
+        <section class="resumo indisponivel"
                  aria-labelledby="titulo-resumo">
             <div class="resumo-linha">
                 <div class="resumo-icone" aria-hidden="true">
-                    …
+                    ×
                 </div>
                 <div>
-                    <h2 id="titulo-resumo">Há sistemas com estado a confirmar</h2>
-                    <p>Alguns serviços estão em verificação ou sem informação disponível.</p>
+                    <h2 id="titulo-resumo">Há sistemas indisponíveis</h2>
+                    <p>Consulte os cartões abaixo para identificar os serviços afetados.</p>
                 </div>
             </div>
 
             <div class="atualizacao">
                 Consulta concluída em
-                <time datetime="2026-11-25T02:10:37.711972-03:00">25/11/2026 às 02:10:37</time>
+                <time datetime="2026-11-25T02:13:57.183724-03:00">25/11/2026 às 02:13:57</time>
                 · Horário de Brasília
             </div>
         </section>
@@ -387,12 +387,12 @@ footer {
         <section class="indicadores" aria-label="Resumo por situação">
             
         <div class="indicador operacional">
-            <strong>4</strong>
+            <strong>5</strong>
             <span>Operacional</span>
         </div>
         
         <div class="indicador indisponivel">
-            <strong>0</strong>
+            <strong>1</strong>
             <span>Indisponível</span>
         </div>
         
@@ -407,7 +407,7 @@ footer {
         </div>
         
         <div class="indicador desconhecido">
-            <strong>2</strong>
+            <strong>0</strong>
             <span>Sem informação</span>
         </div>
         
@@ -421,26 +421,15 @@ footer {
 
             <div class="sistemas">
                 
-        <article class="sistema desconhecido">
+        <article class="sistema indisponivel">
             <span class="selo">
                 <span class="selo-icone" aria-hidden="true">
-                    ?
+                    ×
                 </span>
-                Sem informação
-            </span>
-            <h3>GPON Home Gateway</h3>
-            <p>Não foi possível obter o estado deste sistema.</p>
-        </article>
-        
-        <article class="sistema desconhecido">
-            <span class="selo">
-                <span class="selo-icone" aria-hidden="true">
-                    ?
-                </span>
-                Sem informação
+                Indisponível
             </span>
             <h3>Rigel</h3>
-            <p>Não foi possível obter o estado deste sistema.</p>
+            <p>O monitoramento identificou indisponibilidade.</p>
         </article>
         
         <article class="sistema operacional">
@@ -462,6 +451,17 @@ footer {
                 Operacional
             </span>
             <h3>Google DNS</h3>
+            <p>Sistema respondendo normalmente.</p>
+        </article>
+        
+        <article class="sistema operacional">
+            <span class="selo">
+                <span class="selo-icone" aria-hidden="true">
+                    ✓
+                </span>
+                Operacional
+            </span>
+            <h3>GPON Home Gateway</h3>
             <p>Sistema respondendo normalmente.</p>
         </article>
         
